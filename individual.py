@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import random
 from typing import List
 
 
@@ -10,8 +11,8 @@ class Individual:
     queens: List[int]
 
     def pprint(self):
-        queen = '♕'
-        nothing = 'x'
+        queen = '♛'
+        nothing = '·'
         n = len(self.queens)
         for row in range(n):
             for col in range(n):
@@ -21,3 +22,13 @@ class Individual:
                 else:
                     print(f"{nothing} ", end='')
             print()
+
+    @classmethod
+    def new_random(cls, n: int = 8) -> "Individual":
+        queens = [random.randint(0, n) for _ in range(n)]
+        return Individual(queens=queens)
+
+
+if __name__ == '__main__':
+    individual = Individual.new_random()
+    individual.pprint()
