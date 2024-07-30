@@ -10,6 +10,9 @@ class Individual:
     # e.g. queens[0] = 1 represents a queen in the first column at the second row
     queens: List[int]
 
+    # Para ver aca: creo que la velocidad de cada individuo tambien la tenemos que modelar aca.
+    # La posicion ya la tendriamos modelada con `queens`
+
     def pprint(self):
         queen = '♛'
         nothing = '·'
