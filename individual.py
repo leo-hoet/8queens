@@ -28,6 +28,12 @@ class Individual:
         queens = [random.randint(0, n) for _ in range(n)]
         return Individual(queens=queens)
 
+    def fitness(self) -> float:
+        # Una idea para implementar esto es que el fitness mide las colisiones entre las reinas.
+        # Si hay colisiones contar las colisiones sino es 0.
+        # Multiplicar las colisiones por -1 asi el objetivo es maximizar fitness
+        raise NotImplementedError('Implementar este metodo')
+
 
 if __name__ == '__main__':
     individual = Individual.new_random()
